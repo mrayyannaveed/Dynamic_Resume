@@ -121,6 +121,8 @@ form1.addEventListener("submit", function (event) {
 
           #languages-section{ max-width: 80vw; margin: 50px auto; }
 
+          #download-section{ max-width: 80vw; margin: 50px auto; }
+
           #footer{ background-color: rgb(24, 23, 23); color: white; }
 
           #footer-container{ display: flex; justify-content: space-evenly; flex-wrap: wrap; text-align: center; padding: 7px; }
@@ -275,16 +277,28 @@ form1.addEventListener("submit", function (event) {
       </html>
     `;
 
-    const newWindow = window.open("", "_blank");
-    if (newWindow) {
-      newWindow.document.open();
-      newWindow.document.write(resumeContent);
-      newWindow.document.close();
-    } else {
-      console.error("Failed to open a new tab or window.");
-    }
-  } else {
-    console.error("One or more required elements are missing.");
-  }
+   // Open resume in a new window and prepare for print
+   const newWindow = window.open("", "_blank");
+   if (newWindow) {
+     newWindow.document.open();
+     newWindow.document.write(resumeContent);
+     newWindow.document.close();
+
+     // Add a print button
+     const printButton = newWindow.document.createElement("button");
+     printButton.textContent = "Print/Download as PDF";
+     printButton.style.cssText = "position: fixed; top: 80px; right: 10px; padding: 10px; background-color: #007BFF; color: white; border: none; cursor: pointer;";
+     newWindow.document.body.appendChild(printButton);
+
+     printButton.addEventListener("click", () => {
+       newWindow.print();
+     });
+   } else {
+     console.error("Failed to open a new tab or window.");
+   }
+ } else {
+   console.error("One or more required elements are missing.");
+ }
 });
+
 
