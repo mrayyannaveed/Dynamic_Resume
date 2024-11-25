@@ -98,12 +98,12 @@ form1.addEventListener("submit", function (event) {
           body { font-family: Arial, sans-serif; margin: 0;
           padding: 0; background-color: rgb(181, 216, 255); }
 
-          header {text-transform: uppercase; padding:6px 0; font-size: 2rem; color: white; text-shadow: 2px 6px 4px #000000; text-align: center;background-color: #0066ffad; max-width: 100vw;font-family: "Playwrite CU", cursive; }
+          header {text-transform: uppercase; padding:6px 0; font-size: 2rem; color: #000; text-shadow: 2px 6px 4px #000000; text-align: center;background-color: #0066ffad; max-width: 100vw;font-family: "Playwrite CU", cursive; }
 
           section { margin: 0 auto; }
 
-          h1 { color: #fff; font-size: 2rem; margin: 0; text-shadow: 2px 4px 4px #000000;}
-          h3 { font-size: 1.5rem; margin: 20px 0; color: white; text-shadow: 2px 4px 4px #000000;}
+          h1 { color: #000; font-size: 2rem; margin: 0; text-shadow: 2px 1px 3px #d8d8d8;}
+          h3 { font-size: 1.5rem; margin: 20px 0; color: #000; text-shadow: 2px 1px 3px #d8d8d8;}
 
           main { margin: 20 auto; padding: 20px;}
 
